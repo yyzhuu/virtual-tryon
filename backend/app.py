@@ -58,7 +58,7 @@ def pil_to_binary_mask(pil_image, threshold=0):
     return output_mask
 
 
-base_path = 'yisol/IDM-VTON'
+base_path = 'IDM-VTON'
 example_path = os.path.join(os.path.dirname(__file__), 'example')
 
 unet = UNet2DConditionModel.from_pretrained(
@@ -114,7 +114,7 @@ controlnet = ControlNetModel.from_pretrained(
     torch_dtype=torch.float16
 )
 
-ckpt_path = "/home/FYP/c220189/yisol/IDM-VTON/majicmix/majicmixRealistic_v7.safetensors"
+ckpt_path = ""
 skin_pipe = StableDiffusionControlNetInpaintPipeline.from_single_file(
     ckpt_path,
     controlnet=controlnet,
